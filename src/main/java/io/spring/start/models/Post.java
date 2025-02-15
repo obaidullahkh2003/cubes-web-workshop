@@ -16,12 +16,9 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int share;
     private String description;
     private String location;
     private String image;
-    private int likes;
-
-
-
+    private int share;
+    private int numberOfLikes;
 }
