@@ -2,8 +2,11 @@ package io.spring.start.controllers;
 
 import io.spring.start.models.Post;
 import io.spring.start.service.PostService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class PostController {
@@ -23,8 +26,15 @@ public class PostController {
     }
 
     @PostMapping("/post/create")
-    public String createPost(@RequestBody Post post) {
+    public String createPost(@Valid @RequestBody Post post) {
         return postService.savePost(post);
+    }
+
+    @GetMapping("/user/{id}/posts")
+    public List<Post> findByUser_Id(@PathVariable int id) {
+
+        List<Post> posts=postService.findByUser_Id(id);
+        return posts;
     }
 
 }

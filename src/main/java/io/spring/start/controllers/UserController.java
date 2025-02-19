@@ -2,6 +2,7 @@ package io.spring.start.controllers;
 
 import io.spring.start.models.User;
 import io.spring.start.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +20,7 @@ public class UserController {
     }
 
     @PostMapping("/user/create")
-    public String saveUser(@RequestBody User user) {
+    public String saveUser(@Valid @RequestBody User user) {
         return userService.saveUser(user);
     }
 
@@ -30,7 +31,7 @@ public class UserController {
 
 
     @PostMapping("/user/update/{id}")
-    public String updateUser(@PathVariable int id, @RequestBody User user) {
+    public String updateUser(@PathVariable int id,@Valid @RequestBody User user) {
         return userService.updateUser(user,id);
     }
 
