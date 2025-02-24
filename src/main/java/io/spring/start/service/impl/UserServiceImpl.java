@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String updateUser(User user, int id) {
-        User person = userRepo.findById(id).orElseThrow(null);
+        User person = userRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("User","id",id));
 
         person.setName(user.getName());
         person.setEmail(user.getEmail());
@@ -59,5 +59,11 @@ public class UserServiceImpl implements UserService {
     public List<User> getAllUsers() {
         List<User> persons = userRepo.findAll();
         return persons;
+    }
+
+    @Override
+    public User getUserByName(String name) {
+        User user=userRepo.getUserByName(name);
+        return user;
     }
 }

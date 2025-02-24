@@ -6,7 +6,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.*;
-import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.UniqueElements;
 
 import java.util.List;
@@ -22,7 +21,6 @@ public class User {
     private int id;
     @Size(min=2,max=20,message = "The name must be at least 2 letters and maximam 20 letters")
     @NotBlank(message = "The name must not be blank")
-    @UniqueElements
     private String name;
     private String bio;
     @Email(message = "invalid email format")

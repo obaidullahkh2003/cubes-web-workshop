@@ -10,4 +10,5 @@ String saveUser(User user);
 String updateUser(User user,int id);
 String deleteUser(int id);
 List<User> getAllUsers();
+User getUserByName(String name);
 }
