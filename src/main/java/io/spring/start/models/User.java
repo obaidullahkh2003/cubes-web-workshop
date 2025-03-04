@@ -36,4 +36,10 @@ public class User {
     private int postnum;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Post> posts;
+    @NotBlank
+    private String profile_image;
+
+    private boolean is_public;
+
+
 }

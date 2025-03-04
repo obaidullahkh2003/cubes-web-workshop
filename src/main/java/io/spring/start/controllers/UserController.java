@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
 @RestController
 public class UserController {
-//    @Autowired
-
+    @Autowired
     UserService userService;
 
     @Autowired
@@ -22,12 +22,9 @@ public class UserController {
     }
 
     @PostMapping("/user/create")
-    public String saveUser(@Valid @RequestBody User user) {
-        return userService.saveUser(user);
+    public String saveUser(@ModelAttribute User user, @RequestParam("image") MultipartFile file) {
+        return userService.saveUser(user, file);
     }
-
-
-
 
     @PostMapping("/user/update/{id}")
     public String updateUser(@PathVariable int id,@Valid @RequestBody User user) {

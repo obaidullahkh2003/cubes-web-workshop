@@ -10,4 +10,3 @@ import java.util.List;
 public interface PostRepo extends JpaRepository<Post, Integer> {
     List<Post>findByUserId(int userId);
 }
-//select * from post where user_id =

@@ -16,7 +16,7 @@
 
     <div class="container profile-container mt-5">
         <div class="profile-header">
-            <img th:src="@{/assets/profilepic.jpeg}" alt="Profile Picture" class="profile-img">
+            <img th:src="@{${user.profile_image}}" alt="Profile Picture" class="profile-img">
             <div class="profile-info">
                 <h4 th:text="${user.name}">cubes.bau</h4>
                 <button class="btn btn-outline-primary btn-sm">Follow</button>
@@ -37,9 +37,17 @@
         </div>
         <hr>
         <div class="post-grid">
+            <th:block th:if="${user.is_public()}">
             <div th:each=" post : ${user.posts}">
                 <img th:src="@{${post.image}}" class="img-fluid" alt="Post">
             </div>
+            </th:block>
+            <th:block th:unless="${user.is_public()}">
+                <div class="text-center mt-4">
+                    <p class="text-muted fs-5">This profile is private</p>
+                </div>
+            </th:block>
+
         </div>
     </div>
 

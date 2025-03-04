@@ -1,0 +1,90 @@
+body {
+    background-color: #fafafa;
+    min-height: 100vh;
+}
+
+.signup-card {
+    max-width: 350px;
+    padding: 40px 40px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 1px;
+    margin-top: 40px;
+}
+
+.instagram-logo {
+    font-family: 'Billabong', cursive;
+    font-size: 3rem;
+    text-align: center;
+    margin: 20px 0;
+    color: #262626;
+}
+
+.profile-preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    display: block;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    position: relative;
+}
+
+.camera-icon {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: #0095f6;
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.form-control:focus {
+    border-color: #b2b2b2;
+    box-shadow: none;
+}
+
+.btn-instagram {
+    background-color: #0095f6;
+    color: white;
+    width: 100%;
+    font-weight: 600;
+}
+
+.btn-instagram:hover {
+    background-color: #0077c2;
+    color: white;
+}
+
+.login-link {
+    text-align: center;
+    margin: 20px 0;
+    color: #262626;
+}
+
+.login-link a {
+    color: #0095f6;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.file-upload-wrapper {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#profilePicture {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
